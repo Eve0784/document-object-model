@@ -386,55 +386,70 @@ const cosmetici = [
 
 const cosmeticsContainer = document.getElementById('cosmetics-container');
 
+// for (const cosmetico of cosmetici) {
+//     const cardCosmetic = document.createElement('div');
+//     cardCosmetic.classList.add('card');
+//     cosmeticsContainer.appendChild(cardCosmetic);
+
+//     const idCosmetic = document.createElement('p');
+//     const idNodeCosmetic = document.createTextNode('Id: ' + cosmetico.id);
+//     idCosmetic.appendChild(idNodeCosmetic);
+//     cardCosmetic.appendChild(idCosmetic);
+
+//     const nameCosmetic = document.createElement('p');
+//     const nameNodeCosmetic = document.createTextNode('Nome: ' + cosmetico.nome);
+//     nameCosmetic.appendChild(nameNodeCosmetic);
+//     cardCosmetic.appendChild(nameCosmetic);
+
+//     const brandCosmetic = document.createElement('p');
+//     const brandCosmeticNode = document.createTextNode('Marca: ' + cosmetico.marca);
+//     brandCosmetic.appendChild(brandCosmeticNode);
+//     cardCosmetic.appendChild(brandCosmetic);
+
+//     const categoryCosmetic = document.createElement('p');
+//     const categoryCosmeticNode = document.createTextNode('Categoria: ' + cosmetico.categoria);
+//     categoryCosmetic.appendChild(categoryCosmeticNode);
+//     cardCosmetic.appendChild(categoryCosmetic);
+
+//     const priceCosmetic = document.createElement('p');
+//     const priceCosmeticNode = document.createTextNode('Prezzo: ' + cosmetico.prezzo + "€");
+//     priceCosmetic.appendChild(priceCosmeticNode);
+//     cardCosmetic.appendChild(priceCosmetic);
+
+//     const ingredientsCosmetic = document.createElement('p');
+//     const ingredientsCosmeticNode = document.createTextNode('Ingredienti Principali: ' + cosmetico.ingredientiPrincipali);
+//     ingredientsCosmetic.appendChild(ingredientsCosmeticNode);
+//     cardCosmetic.appendChild(ingredientsCosmetic);
+
+//     const UseCosmetic = document.createElement('p');
+//     const UseCosmeticNode = document.createTextNode('Uso Consigliato: ' + cosmetico.usoConsigliato);
+//     UseCosmetic.appendChild(UseCosmeticNode);
+//     cardCosmetic.appendChild(UseCosmetic);
+
+//     const reviewCosmetic = document.createElement('p');
+//     const reviewCosmeticNode = document.createTextNode('Recensioni: ' + cosmetico.recensioni);
+//     reviewCosmetic.appendChild(reviewCosmeticNode);
+//     cardCosmetic.appendChild(reviewCosmetic);
+
+//     const inStockCosmetic = document.createElement('p');
+//     const inStockCosmeticNode = document.createTextNode('In Stock: ' + (cosmetico.inStock ? 'sì' : 'no'));
+//     inStockCosmetic.appendChild(inStockCosmeticNode);
+//     cardCosmetic.appendChild(inStockCosmetic);
+
+// }
+
 for (const cosmetico of cosmetici) {
-    const cardCosmetic = document.createElement('div');
-    cardCosmetic.classList.add('card');
-    cosmeticsContainer.appendChild(cardCosmetic);
-
-    const idCosmetic = document.createElement('p');
-    const idNodeCosmetic = document.createTextNode('Id: ' + cosmetico.id);
-    idCosmetic.appendChild(idNodeCosmetic);
-    cardCosmetic.appendChild(idCosmetic);
-
-    const nameCosmetic = document.createElement('p');
-    const nameNodeCosmetic = document.createTextNode('Nome: ' + cosmetico.nome);
-    nameCosmetic.appendChild(nameNodeCosmetic);
-    cardCosmetic.appendChild(nameCosmetic);
-
-
-    const brandCosmetic = document.createElement('p');
-    const brandCosmeticNode = document.createTextNode('Marca: ' + cosmetico.marca);
-    brandCosmetic.appendChild(brandCosmeticNode);
-    cardCosmetic.appendChild(brandCosmetic);
-
-    const categoryCosmetic = document.createElement('p');
-    const categoryCosmeticNode = document.createTextNode('Categoria: ' + cosmetico.categoria);
-    categoryCosmetic.appendChild(categoryCosmeticNode);
-    cardCosmetic.appendChild(categoryCosmetic);
-
-    const priceCosmetic = document.createElement('p');
-    const priceCosmeticNode = document.createTextNode('Prezzo: ' + cosmetico.prezzo + "€");
-    priceCosmetic.appendChild(priceCosmeticNode);
-    cardCosmetic.appendChild(priceCosmetic);
-
-    const ingredientsCosmetic = document.createElement('p');
-    const ingredientsCosmeticNode = document.createTextNode('Ingredienti Principali: ' + cosmetico.ingredientiPrincipali);
-    ingredientsCosmetic.appendChild(ingredientsCosmeticNode);
-    cardCosmetic.appendChild(ingredientsCosmetic);
-
-    const UseCosmetic = document.createElement('p');
-    const UseCosmeticNode = document.createTextNode('Uso Consigliato: ' + cosmetico.usoConsigliato);
-    UseCosmetic.appendChild(UseCosmeticNode);
-    cardCosmetic.appendChild(UseCosmetic);
-
-    const reviewCosmetic = document.createElement('p');
-    const reviewCosmeticNode = document.createTextNode('Recensioni: ' + cosmetico.recensioni);
-    reviewCosmetic.appendChild(reviewCosmeticNode);
-    cardCosmetic.appendChild(reviewCosmetic);
-
-    const inStockCosmetic = document.createElement('p');
-    const inStockCosmeticNode = document.createTextNode('In Stock: ' + (cosmetico.inStock ? 'sì' : 'no'));
-    inStockCosmetic.appendChild(inStockCosmeticNode);
-    cardCosmetic.appendChild(inStockCosmetic);
-
+    const cosmeticoHtml = `<div class="card">
+    <p>Id: ${cosmetico.id}</p>
+    <p>Nome: ${cosmetico.nome}</p>
+    <p>Marca: ${cosmetico.marca}</p>
+    <p>Categoria: ${cosmetico.categoria}</p>
+    <p>Prezzo: ${cosmetico.prezzo}€</p>
+    <p>Ingredienti Principali: ${cosmetico.ingredientiPrincipali}</p>
+    <p>Uso Consigliato: ${cosmetico.usoConsigliato}</p>
+    <p>Recensioni: ${cosmetico.recensioni}</p>
+    <p>In Stock: ${cosmetico.inStock ? 'sì' : 'no'}</p>
+</div>`
+cosmeticsContainer.innerHTML += cosmeticoHtml;
+    
 }
