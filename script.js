@@ -129,33 +129,33 @@ const container = document.getElementById('fruit-container');
 
 // }
 
-for (const fruit of fruits) {
+// for (const fruit of fruits) {
 
-    const cardFruit = document.createElement('div');
-    container.appendChild(cardFruit);
+//     const cardFruit = document.createElement('div');
+//     container.appendChild(cardFruit);
 
-    const nameFruit = document.createElement('p');
-    const nameNodeFruit = document.createTextNode('nome: ' + fruit.name);
-    cardFruit.classList.add('card');
-    nameFruit.appendChild(nameNodeFruit);
-    cardFruit.appendChild(nameFruit);
-
-
-
-    const originFruit = document.createElement('p');
-    const originNodeFruit = document.createTextNode('origine: ' + fruit.origin);
-
-    originFruit.appendChild(originNodeFruit);
-    cardFruit.appendChild(originFruit);
+//     const nameFruit = document.createElement('p');
+//     const nameNodeFruit = document.createTextNode('nome: ' + fruit.name);
+//     cardFruit.classList.add('card-fruit');
+//     nameFruit.appendChild(nameNodeFruit);
+//     cardFruit.appendChild(nameFruit);
 
 
-    const weightFruit = document.createElement('p');
-    const weightNodeFruit = document.createTextNode('peso: ' + fruit.weight);
 
-    weightFruit.appendChild(weightNodeFruit);
-    cardFruit.appendChild(weightFruit);
+//     const originFruit = document.createElement('p');
+//     const originNodeFruit = document.createTextNode('origine: ' + fruit.origin);
 
-}
+//     originFruit.appendChild(originNodeFruit);
+//     cardFruit.appendChild(originFruit);
+
+
+//     const weightFruit = document.createElement('p');
+//     const weightNodeFruit = document.createTextNode('peso: ' + fruit.weight);
+
+//     weightFruit.appendChild(weightNodeFruit);
+//     cardFruit.appendChild(weightFruit);
+
+// }
 
 //-----------------------------LISTA DEI COSMETICI------------------------------------------------------//
 
@@ -254,7 +254,7 @@ const cosmetici = [
         marca: "TRESemmé",
         categoria: "Haircare",
         prezzo: 7.99,
-        ingredientiPrincipali: ["Alcool Denat.", "Pantenolo"],
+        ingredientiPrincipali: ["Alcool Denat", "Pantenolo"],
         usoConsigliato: "Dopo lo styling",
         recensioni: 4.0,
         inStock: true
@@ -364,7 +364,7 @@ const cosmetici = [
         marca: "Urban Decay",
         categoria: "Makeup",
         prezzo: 24.99,
-        ingredientiPrincipali: ["Alcool Denat.", "Glicerina"],
+        ingredientiPrincipali: ["Alcool Denat", "Glicerina"],
         usoConsigliato: "Dopo il trucco",
         recensioni: 4.7,
         inStock: true
@@ -390,8 +390,8 @@ const cosmeticsContainer = document.getElementById('cosmetics-container');
 //     cosmeticsContainer.appendChild(cardCosmetic);
 
 //     const idCosmetic = document.createElement('p');
-//     const idNodeCosmetic = document.createTextNode('Id: ' + cosmetico.id);
-//     idCosmetic.appendChild(idNodeCosmetic);
+///-------------- il node si puo fare direttamente nel appendChild ---> idCosmetic.appendChild(document.createTextNode('Id: ' + cosmetico.id))-------//
+//     idCosmetic.appendChild(document.createTextNode('Id: ' + cosmetico.id))
 //     cardCosmetic.appendChild(idCosmetic);
 
 //     const nameCosmetic = document.createElement('p');
@@ -436,18 +436,53 @@ const cosmeticsContainer = document.getElementById('cosmetics-container');
 
 // }
 
-for (const cosmetico of cosmetici) {
-    const cosmeticoHtml = `<div class="card">
-    <p>Id: ${cosmetico.id}</p>
-    <p>Nome: ${cosmetico.nome}</p>
-    <p>Marca: ${cosmetico.marca}</p>
-    <p>Categoria: ${cosmetico.categoria}</p>
-    <p>Prezzo: ${cosmetico.prezzo}€</p>
-    <p>Ingredienti Principali: ${cosmetico.ingredientiPrincipali}</p>
-    <p>Uso Consigliato: ${cosmetico.usoConsigliato}</p>
-    <p>Recensioni: ${cosmetico.recensioni}</p>
-    <p>In Stock: ${cosmetico.inStock ? 'sì' : 'no'}</p>
-</div>`
-cosmeticsContainer.innerHTML += cosmeticoHtml;
-    
+// for (const cosmetico of cosmetici) {
+//     const cosmeticoHtml = `<div class="cosmeticiCard">
+//     <p>Id: ${cosmetico.id}</p>
+//     <p>Nome: ${cosmetico.nome}</p>
+//     <p>Marca: ${cosmetico.marca}</p>
+//     <p>Categoria: ${cosmetico.categoria}</p>
+//     <p>Prezzo: ${cosmetico.prezzo}€</p>
+//     <p>Ingredienti Principali: ${cosmetico.ingredientiPrincipali.join(', ')}</p>
+//     <p>Uso Consigliato: ${cosmetico.usoConsigliato}</p>
+//     <p>Recensioni: ${cosmetico.recensioni}</p>
+//     <p>In Stock: ${cosmetico.inStock ? 'sì' : 'no'}</p>
+// </div>`
+// cosmeticsContainer.innerHTML += cosmeticoHtml;
+// }
+
+
+//--------------------------------------EVENTI--------------------------------------//
+//------------------FUNZIONI DI CALLBACK-------------------------//
+
+function pressedButton(){
+    alert('non esagerare!!!')
 }
+
+//--------------------------------ADDEVENTLISTENER------------------------//
+const myButton = document.getElementById('press-counter');
+
+let totalPress = 0;
+function addPress() {
+    totalPress += 1;
+    console.log(totalPress); 
+    const displayer = document.getElementById('press-displayer');
+    displayer.innerHTML += 'hai schiacciato '+ totalPress + ' volte<br>'
+}
+myButton.addEventListener('click', addPress); // la funzione non si da con le tonde nell'addEventListener
+
+//---------------------------------- classList toggle-------------------------------//
+const switchButton = document.getElementById('switch-btn');
+
+function switchOn() {
+    switchButton.classList.toggle('on');
+    const span= document.querySelector('#switch-btn span');
+    if (span.innerText === 'OFF') {
+        span.innerText = 'ON';
+    }
+    else{
+        span.innerText = 'OFF';
+    }
+}
+
+switchButton.addEventListener('click', switchOn)

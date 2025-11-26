@@ -9,6 +9,64 @@
     box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ;
 }
 
+.card-fruit{
+    border: 3px solid lightskyblue;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ;
+    background-color: rgb(206, 245, 232);
+    width: 200px;
+} 
+#fruit-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
 .green-background{
     background-color: rgb(101, 155, 20);
 }
+
+.cosmeticiCard{
+    border: 3px solid rgb(250, 216, 250);
+    padding: 8px;
+    gap: 3px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ;
+    background-color: antiquewhite;
+    width: 325px;
+}
+
+ #cosmetics-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+ }
+
+ .switch{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: darkslategrey;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    color: white;
+ }
+
+ /* .switch:hover{
+    background-color: rgb(113, 221, 221);
+    color: black;
+ } */
+
+
+ /* https://uiverse.io/switches     per button diversi gia preimpostati*/
+
+ .on{
+    background-color: rgb(155, 222, 135);
+    color: black;
+    box-shadow: inset 0px 10px 10px 0px rgba(0,0,0,0.14) , 0px 3px 1px -2px rgba(0,0,0,0.12) , 0px 1px 5px 0px rgba(0,0,0,0.2) ;
+ }
