@@ -3,6 +3,7 @@
 }
 
 .card{
+<<<<<<< HEAD
     border: 3px solid lightskyblue;
     padding: 8px;
     border-radius: 8px;
@@ -11,4 +12,14 @@
 
 .green-background{
     background-color: rgb(101, 155, 20);
+=======
+    border: 3px solid lightblue;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+
+.green-background{
+    background-color: rgb(88, 130, 25);
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 }

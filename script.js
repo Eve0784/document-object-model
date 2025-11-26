@@ -38,6 +38,7 @@ console.log(divOne.outerHTML);
 console.log(divOne.children);
 
 //----------------SCRIVERE IL CONTENUTO------------------------//
+<<<<<<< HEAD
 //--------appendChild per creare un nuovo p dentro del div --------------//
 const nweP= document.createElement('p');
 divOne.appendChild(nweP);
@@ -113,12 +114,94 @@ const fruits = [
     { name: "mango", origin: "venezuela", weight: 50 },
     { name: "avocado", origin: "perù", weight: 10 },
     { name: "papaya", origin: "guatemala", weight: 70 },
+=======
+//appendChild
+const newP = document.createElement('p');
+divOne.appendChild(newP);
+//----------------createTextNode---------------
+const node = document.createTextNode('quarto');
+newP.appendChild(node);
+
+
+//innerHTML
+newP.innerHTML = 'quarto paragrafo'
+newP.innerHTML = '<strong>quarto paragrafo</strong>'
+
+
+//esempio
+const student1 = {name: 'Alexander', surname:'Macias', age: 26, gender:'Male'};
+const student2 = {name: 'Evelyn', surname:'Medina', age: undefined, gender:'Female'};
+
+//append
+const emptyDiv = document.getElementById('empty-div');
+
+const cardDiv = document.createElement('div');
+cardDiv.id = 'first-card';
+emptyDiv.appendChild(cardDiv);
+
+const nameP = document.createElement('p');
+const nameNode = document.createTextNode('nome: ' + student1.name);
+nameP.appendChild(nameNode);
+cardDiv.appendChild(nameP);
+
+const surnameP = document.createElement('p');
+const surnameNode = document.createTextNode('cognome: ' + student1.surname);
+surnameP.appendChild(surnameNode);
+cardDiv.appendChild(surnameP);
+
+const ageP = document.createElement('p');
+ageP.appendChild(document.createTextNode('età: ' + student1.age));
+cardDiv.appendChild(ageP);
+
+const genderP = document.createElement('p');
+genderP.appendChild(document.createTextNode('gender: ' + student1.gender));
+cardDiv.appendChild(genderP);
+
+
+//innerHTML
+
+const htmlString = `<div class="card">
+    <p>Nome: ${student2.name}</p>
+    <p>Nognome: ${student2.surname}</p>
+    <p>Età: ${student2.age}</p>
+    <p>Genere: ${student2.gender}</p>
+</div>`
+
+console.log(htmlString);
+console.log(emptyDiv.innerHTML);
+
+// emptyDiv.innerHTML = emptyDiv.innerHTML + htmlString;
+emptyDiv.innerHTML += htmlString;
+
+
+/// AGGIUNGERE CLASSI
+
+const card = document.getElementById('first-card');
+// card.className = 'card';
+// card.className = 'card green-background'
+
+card.classList.add('card');
+card.classList.add('green-background');
+//card.classList.toggle('card');
+
+
+const fruits = [
+    {name: "Banana", origin: "Ecuador", weight: 100},
+    {name: "Mela", origin: "Italia", weight: 200},
+    {name: "Mango", origin: "Venezuela", weight: 50},
+    {name: "Avocado", origin: "Perù", weight: 10},
+    {name: "Papaya", origin: "Guatemala", weight: 70},
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 ]
 
 const container = document.getElementById('fruit-container');
 
 // for (const fruit of fruits) {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 //     const fruitHtml = `<div class="card">
 //     <p>nome: ${fruit.name}</p>
 //     <p>origin: ${fruit.origin}</p>
@@ -129,13 +212,22 @@ const container = document.getElementById('fruit-container');
 
 // }
 
+<<<<<<< HEAD
 for (const fruit of fruits) {
 
+=======
+
+for (const fruit of fruits) {
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
     const cardFruit = document.createElement('div');
     container.appendChild(cardFruit);
 
     const nameFruit = document.createElement('p');
+<<<<<<< HEAD
     const nameNodeFruit = document.createTextNode('nome: ' + fruit.name);
+=======
+    const nameNodeFruit = document.createTextNode('Nome: ' + fruit.name);
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
     cardFruit.classList.add('card');
     nameFruit.appendChild(nameNodeFruit);
     cardFruit.appendChild(nameFruit);
@@ -143,20 +235,32 @@ for (const fruit of fruits) {
 
 
     const originFruit = document.createElement('p');
+<<<<<<< HEAD
     const originNodeFruit = document.createTextNode('origine: ' + fruit.origin);
+=======
+    const originNodeFruit = document.createTextNode('Origine: ' + fruit.origin);
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 
     originFruit.appendChild(originNodeFruit);
     cardFruit.appendChild(originFruit);
 
 
     const weightFruit = document.createElement('p');
+<<<<<<< HEAD
     const weightNodeFruit = document.createTextNode('peso: ' + fruit.weight);
+=======
+    const weightNodeFruit = document.createTextNode('Peso: ' + fruit.weight);
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 
     weightFruit.appendChild(weightNodeFruit);
     cardFruit.appendChild(weightFruit);
 
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
 //-----------------------------LISTA DEI COSMETICI------------------------------------------------------//
 
 const cosmetici = [
@@ -450,4 +554,8 @@ for (const cosmetico of cosmetici) {
 </div>`
 cosmeticsContainer.innerHTML += cosmeticoHtml;
     
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1e9c1a74a248a5ec70c7ab21331439699f564146
