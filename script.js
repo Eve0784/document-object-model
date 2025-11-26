@@ -102,7 +102,7 @@ const card = document.getElementById('first-card');
 
 card.classList.add('card');
 card.classList.add('green-background');
-card.classList.toggle('card'); //se c'e la classe la toglie se non ce la mette
+//card.classList.toggle('card'); //se c'e la classe la toglie se non ce la mette
 
 
 //-----------------------------------------------------------------------------------/
@@ -131,7 +131,6 @@ const container = document.getElementById('fruit-container');
 
 for (const fruit of fruits) {
 
-
     const cardFruit = document.createElement('div');
     container.appendChild(cardFruit);
 
@@ -156,6 +155,299 @@ for (const fruit of fruits) {
     weightFruit.appendChild(weightNodeFruit);
     cardFruit.appendChild(weightFruit);
 
+}
 
+//-----------------------------LISTA DEI COSMETICI------------------------------------------------------//
 
+const cosmetici = [
+    {
+        id: 1,
+        nome: "Crema Idratante Viso",
+        marca: "Nivea",
+        categoria: "Skincare",
+        prezzo: 12.99,
+        ingredientiPrincipali: ["Aloe Vera", "Acido Ialuronico", "Vitamina E"],
+        usoConsigliato: "Mattina e sera",
+        recensioni: 4.5,
+        inStock: true
+    },
+    {
+        id: 2,
+        nome: "Mascara Volume",
+        marca: "Maybelline",
+        categoria: "Makeup",
+        prezzo: 9.99,
+        ingredientiPrincipali: ["Cera d'Api", "Pigmenti Minerali"],
+        usoConsigliato: "Ogni volta che si desidera",
+        recensioni: 4.7,
+        inStock: true
+    },
+    {
+        id: 3,
+        nome: "Shampoo Antiforfora",
+        marca: "Head & Shoulders",
+        categoria: "Haircare",
+        prezzo: 6.49,
+        ingredientiPrincipali: ["Piroctone Olamine", "Zinco Pyrithione"],
+        usoConsigliato: "2-3 volte a settimana",
+        recensioni: 4.3,
+        inStock: true
+    },
+    {
+        id: 4,
+        nome: "Balsamo Labbra",
+        marca: "Burt's Bees",
+        categoria: "Skincare",
+        prezzo: 4.99,
+        ingredientiPrincipali: ["Cera d'Api", "Olio di Cocco"],
+        usoConsigliato: "Quotidianamente",
+        recensioni: 4.8,
+        inStock: true
+    },
+    {
+        id: 5,
+        nome: "Fondotinta Liquido",
+        marca: "L'Oréal Paris",
+        categoria: "Makeup",
+        prezzo: 14.99,
+        ingredientiPrincipali: ["Olio di Jojoba", "SPF 15"],
+        usoConsigliato: "Mattina",
+        recensioni: 4.2,
+        inStock: true
+    },
+    {
+        id: 6,
+        nome: "Siero Anti-Age",
+        marca: "The Ordinary",
+        categoria: "Skincare",
+        prezzo: 19.99,
+        ingredientiPrincipali: ["Retinolo", "Vitamina C"],
+        usoConsigliato: "Sera",
+        recensioni: 4.6,
+        inStock: false
+    },
+    {
+        id: 7,
+        nome: "Ombretto Palette",
+        marca: "NYX",
+        categoria: "Makeup",
+        prezzo: 16.99,
+        ingredientiPrincipali: ["Pigmenti Minerali", "Olio di Ricino"],
+        usoConsigliato: "Occasioni speciali",
+        recensioni: 4.4,
+        inStock: true
+    },
+    {
+        id: 8,
+        nome: "Detergente Viso",
+        marca: "La Roche-Posay",
+        categoria: "Skincare",
+        prezzo: 13.99,
+        ingredientiPrincipali: ["Acqua Termale", "Glicerina"],
+        usoConsigliato: "Mattina e sera",
+        recensioni: 4.7,
+        inStock: true
+    },
+    {
+        id: 9,
+        nome: "Lacca per Capelli",
+        marca: "TRESemmé",
+        categoria: "Haircare",
+        prezzo: 7.99,
+        ingredientiPrincipali: ["Alcool Denat.", "Pantenolo"],
+        usoConsigliato: "Dopo lo styling",
+        recensioni: 4.0,
+        inStock: true
+    },
+    {
+        id: 10,
+        nome: "Correttore Occhiaie",
+        marca: "MAC",
+        categoria: "Makeup",
+        prezzo: 22.99,
+        ingredientiPrincipali: ["Olio di Argan", "Caffeina"],
+        usoConsigliato: "Mattina",
+        recensioni: 4.9,
+        inStock: true
+    },
+    {
+        id: 11,
+        nome: "Maschera Capelli",
+        marca: "Garnier",
+        categoria: "Haircare",
+        prezzo: 5.99,
+        ingredientiPrincipali: ["Olio di Avocado", "Cheratina"],
+        usoConsigliato: "1 volta a settimana",
+        recensioni: 4.5,
+        inStock: true
+    },
+    {
+        id: 12,
+        nome: "Blush in Polvere",
+        marca: "Milani",
+        categoria: "Makeup",
+        prezzo: 10.99,
+        ingredientiPrincipali: ["Mica", "Olio di Jojoba"],
+        usoConsigliato: "Quotidianamente",
+        recensioni: 4.3,
+        inStock: true
+    },
+    {
+        id: 13,
+        nome: "Tonico Viso",
+        marca: "Clinique",
+        categoria: "Skincare",
+        prezzo: 18.99,
+        ingredientiPrincipali: ["Acido Salicilico", "Camomilla"],
+        usoConsigliato: "Dopo la detersione",
+        recensioni: 4.6,
+        inStock: true
+    },
+    {
+        id: 14,
+        nome: "Smalto Semipermanente",
+        marca: "OPI",
+        categoria: "Nailcare",
+        prezzo: 11.99,
+        ingredientiPrincipali: ["Resine Acriliche", "Pigmenti"],
+        usoConsigliato: "Ogni 2 settimane",
+        recensioni: 4.8,
+        inStock: false
+    },
+    {
+        id: 15,
+        nome: "Profumo Donna",
+        marca: "Chanel",
+        categoria: "Fragrance",
+        prezzo: 99.99,
+        ingredientiPrincipali: ["Note di Vaniglia", "Fiori Bianchi"],
+        usoConsigliato: "Occasioni speciali",
+        recensioni: 4.9,
+        inStock: true
+    },
+    {
+        id: 16,
+        nome: "Scrub Corpo",
+        marca: "The Body Shop",
+        categoria: "Bodycare",
+        prezzo: 15.99,
+        ingredientiPrincipali: ["Zucchero di Canna", "Olio di Mandorle"],
+        usoConsigliato: "2 volte a settimana",
+        recensioni: 4.4,
+        inStock: true
+    },
+    {
+        id: 17,
+        nome: "Eyeliner Liquido",
+        marca: "Kiko Milano",
+        categoria: "Makeup",
+        prezzo: 8.99,
+        ingredientiPrincipali: ["Pigmenti Neri", "Glicerina"],
+        usoConsigliato: "Quotidianamente",
+        recensioni: 4.2,
+        inStock: true
+    },
+    {
+        id: 18,
+        nome: "Crema Mani",
+        marca: "Neutrogena",
+        categoria: "Skincare",
+        prezzo: 6.99,
+        ingredientiPrincipali: ["Glicerina", "Olio di Karité"],
+        usoConsigliato: "Quotidianamente",
+        recensioni: 4.5,
+        inStock: true
+    },
+    {
+        id: 19,
+        nome: "Spray Fissante Makeup",
+        marca: "Urban Decay",
+        categoria: "Makeup",
+        prezzo: 24.99,
+        ingredientiPrincipali: ["Alcool Denat.", "Glicerina"],
+        usoConsigliato: "Dopo il trucco",
+        recensioni: 4.7,
+        inStock: true
+    },
+    {
+        id: 20,
+        nome: "Olio per Capelli",
+        marca: "Moroccanoil",
+        categoria: "Haircare",
+        prezzo: 39.99,
+        ingredientiPrincipali: ["Olio di Argan", "Vitamina E"],
+        usoConsigliato: "1-2 volte a settimana",
+        recensioni: 4.8,
+        inStock: true
+    }
+];
+
+const cosmeticsContainer = document.getElementById('cosmetics-container');
+
+// for (const cosmetico of cosmetici) {
+//     const cardCosmetic = document.createElement('div');
+//     cardCosmetic.classList.add('card');
+//     cosmeticsContainer.appendChild(cardCosmetic);
+
+//     const idCosmetic = document.createElement('p');
+//     const idNodeCosmetic = document.createTextNode('Id: ' + cosmetico.id);
+//     idCosmetic.appendChild(idNodeCosmetic);
+//     cardCosmetic.appendChild(idCosmetic);
+
+//     const nameCosmetic = document.createElement('p');
+//     const nameNodeCosmetic = document.createTextNode('Nome: ' + cosmetico.nome);
+//     nameCosmetic.appendChild(nameNodeCosmetic);
+//     cardCosmetic.appendChild(nameCosmetic);
+
+//     const brandCosmetic = document.createElement('p');
+//     const brandCosmeticNode = document.createTextNode('Marca: ' + cosmetico.marca);
+//     brandCosmetic.appendChild(brandCosmeticNode);
+//     cardCosmetic.appendChild(brandCosmetic);
+
+//     const categoryCosmetic = document.createElement('p');
+//     const categoryCosmeticNode = document.createTextNode('Categoria: ' + cosmetico.categoria);
+//     categoryCosmetic.appendChild(categoryCosmeticNode);
+//     cardCosmetic.appendChild(categoryCosmetic);
+
+//     const priceCosmetic = document.createElement('p');
+//     const priceCosmeticNode = document.createTextNode('Prezzo: ' + cosmetico.prezzo + "€");
+//     priceCosmetic.appendChild(priceCosmeticNode);
+//     cardCosmetic.appendChild(priceCosmetic);
+
+//     const ingredientsCosmetic = document.createElement('p');
+//     const ingredientsCosmeticNode = document.createTextNode('Ingredienti Principali: ' + cosmetico.ingredientiPrincipali);
+//     ingredientsCosmetic.appendChild(ingredientsCosmeticNode);
+//     cardCosmetic.appendChild(ingredientsCosmetic);
+
+//     const UseCosmetic = document.createElement('p');
+//     const UseCosmeticNode = document.createTextNode('Uso Consigliato: ' + cosmetico.usoConsigliato);
+//     UseCosmetic.appendChild(UseCosmeticNode);
+//     cardCosmetic.appendChild(UseCosmetic);
+
+//     const reviewCosmetic = document.createElement('p');
+//     const reviewCosmeticNode = document.createTextNode('Recensioni: ' + cosmetico.recensioni);
+//     reviewCosmetic.appendChild(reviewCosmeticNode);
+//     cardCosmetic.appendChild(reviewCosmetic);
+
+//     const inStockCosmetic = document.createElement('p');
+//     const inStockCosmeticNode = document.createTextNode('In Stock: ' + (cosmetico.inStock ? 'sì' : 'no'));
+//     inStockCosmetic.appendChild(inStockCosmeticNode);
+//     cardCosmetic.appendChild(inStockCosmetic);
+
+// }
+
+for (const cosmetico of cosmetici) {
+    const cosmeticoHtml = `<div class="card">
+    <p>Id: ${cosmetico.id}</p>
+    <p>Nome: ${cosmetico.nome}</p>
+    <p>Marca: ${cosmetico.marca}</p>
+    <p>Categoria: ${cosmetico.categoria}</p>
+    <p>Prezzo: ${cosmetico.prezzo}€</p>
+    <p>Ingredienti Principali: ${cosmetico.ingredientiPrincipali}</p>
+    <p>Uso Consigliato: ${cosmetico.usoConsigliato}</p>
+    <p>Recensioni: ${cosmetico.recensioni}</p>
+    <p>In Stock: ${cosmetico.inStock ? 'sì' : 'no'}</p>
+</div>`
+cosmeticsContainer.innerHTML += cosmeticoHtml;
+    
 }
