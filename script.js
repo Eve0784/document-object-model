@@ -485,4 +485,14 @@ function switchOn() {
     }
 }
 
-switchButton.addEventListener('click', switchOn)
+switchButton.addEventListener('click', switchOn);
+
+//------------------------Modificare lo stile di un elemento-----------------------//
+const styleDiv = document.getElementById('style-div');
+styleDiv.style.backgroundColor = 'pink';
+styleDiv.style.fontSize = 'xxx-large';
+styleDiv.style.borderRadius = '10px';
+
+//-----------------set attribute---------------------//
+const marioImage = document.getElementById('mario-image');
+marioImage.setAttribute('width', '200px');
